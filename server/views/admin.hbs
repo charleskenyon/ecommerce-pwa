@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="">
+    
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>CMS</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+
+        {{#if isDevelopment}}
+            <link rel="stylesheet" href="main.css"></link>
+            <script defer src="/vendor.js"></script> 
+            <script defer src="/cms.js"></script>
+        {{else}}
+            <link data-main-css rel="stylesheet"></link>
+            <script defer data-vendor-js></script> 
+            <script defer data-cms-js></script>
+        {{/if}}
+
+    </head>
+
+    <body>
+        <div id="cms"></div>
+    </body>
+
+</html>

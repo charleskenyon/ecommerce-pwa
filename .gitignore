@@ -1,0 +1,6 @@
+node_modules
+server/public/css
+server/public/img
+server/public/js
+server/lib/credentials.js
+.DS_Store

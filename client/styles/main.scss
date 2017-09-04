@@ -1,0 +1,14 @@
+@import 'base/normalize';
+
+$primary-color: white;
+
+body {
+	background-color: $primary-color;
+}
+
+// critical.scss
+// non-critical.scss - loadCss(async)
+// initial congestion window (typically 14.6kB compressed)
+// limit size of HTML markup, images, CSS, JavaScript
+// Time to first meaningfull paint - Chrome Lighthouse
+// Progressive Enhancement
