@@ -1,4 +1,5 @@
 @import 'base/normalize';
+@import 'base/icons';
 
 $primary-color: white;
 
@@ -12,3 +13,5 @@ body {
 // limit size of HTML markup, images, CSS, JavaScript
 // Time to first meaningfull paint - Chrome Lighthouse
 // Progressive Enhancement
+
+@import 'cms';

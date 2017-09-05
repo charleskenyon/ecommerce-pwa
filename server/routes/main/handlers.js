@@ -5,12 +5,13 @@ const { renderToString } = require('react-dom/server');
 const Plp = require('../../../client/scripts/plp/components').default;
 const reducers = require('../../../client/scripts/plp/reducers').default;
 const productsViewModel = require('../../view-models/product');
-const { createPreloadedStatePlp } = require('../../lib/utils');
+const checkCache = require('../../lib/utils/check-cache');
+const { parseStatePlp } = require('../../lib/utils/parse-state');
 
 const home = async function(req, res, next) {
 	try {
-		const productsQuery = await productsViewModel();
-		const state = createPreloadedStatePlp(productsQuery, req.session.basket);
+		const productsQuery = await checkCache(productsViewModel);
+		const state = parseStatePlp(productsQuery, req.session.basket);
 		const store = createStore(reducers, state);
 		const preloadedState = JSON.stringify(store.getState());
 		const plp = <Provider store={store}><Plp /></Provider>;
@@ -44,4 +45,4 @@ const postBasket = function(req, res) {
 	res.send({ success: true });
 }
 
-module.exports = { home, getProducts, getBasket, postBasket }
+module.exports = { home, getProducts, getBasket, postBasket };

@@ -1,4 +1,4 @@
-# e-commerce progressive web app
+# e-commerce platform / progressive web application
 
 npm install nodemon -g
 

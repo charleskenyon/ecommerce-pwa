@@ -1,4 +1,4 @@
-const createPreloadedStatePlp = function(products, basket={ basket: [], total: 0 }) {
+const parseStatePlp = function(products, basket={ basket: [], total: 0 }) {
 	return {
 		productState: { 
 			products,
@@ -14,4 +14,4 @@ const createPreloadedStatePlp = function(products, basket={ basket: [], total: 0
 	}
 }
 
-module.exports = { createPreloadedStatePlp };
+module.exports = { parseStatePlp };
