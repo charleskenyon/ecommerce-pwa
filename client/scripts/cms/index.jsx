@@ -1,4 +1,4 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-ReactDOM.render(<span className='icon--plus'></span>, document.getElementById('cms'));
+ReactDOM.render(<i className='icon--plus'></i>, document.getElementById('cms'));
