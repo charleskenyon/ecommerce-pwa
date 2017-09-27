@@ -1,7 +1,7 @@
 const React = require('react');
 const { createStore } = require('redux');
 const { Provider } = require('react-redux');
-const { renderToStaticMarkup } = require('react-dom/server');
+const { renderToString } = require('react-dom/server');
 const Plp = require('../../../client/scripts/plp/components').default;
 const reducers = require('../../../client/scripts/plp/reducers').default;
 const productsViewModel = require('../../view-models/product');
@@ -15,7 +15,7 @@ const home = async function(req, res, next) {
 		const store = createStore(reducers, state);
 		const preloadedState = JSON.stringify(store.getState());
 		const plp = <Provider store={store}><Plp /></Provider>;
-		const html = renderToStaticMarkup(plp);
+		const html = renderToString(plp);
 		res.render('home', { html, preloadedState });
 	} catch(err) {
 		return next(err);

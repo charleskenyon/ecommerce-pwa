@@ -7,7 +7,7 @@ import Plp from './components';
 
 export default function() {
 
-	ReactDOM.render(
+	ReactDOM.hydrate(
 		<Provider store={store}>
 			<Plp />
 		</Provider>,
