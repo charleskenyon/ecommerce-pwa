@@ -12,13 +12,14 @@ const basketReducer = function(state = initialProductState, action) {
 	switch (action.type) {
 
 		case REQUEST_BASKET:
-			return Object.assign({}, state, { isFetching: true });
+			return { ...state, isFetching: true };
 
 		case RECEIVE_BASKET:
-			return Object.assign({}, state, action.basket, { isFetching: false });
+			return { ...state, ...action.basket, isFetching: false };
 
 
 		case ADD_TO_BAG: 
+			// refactor
 			const newState = Object.assign({}, state);
 			const product = Object.assign({}, action.product);
 			newState.total += parseInt(product.price);

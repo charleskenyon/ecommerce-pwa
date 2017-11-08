@@ -10,10 +10,10 @@ const productReducer = function(state = initialProductState, action) {
 	switch (action.type) {
 		
 		case REQUEST_PRODUCTS: 
-			return Object.assign({}, state, { isFetching: true });
+			return { ...state, isFetching: true };
 
 		case RECEIVE_PRODUCTS: 
-			return Object.assign({}, state, { products: action.products, isFetching: false });
+			return { ...state, products: action.products, isFetching: false };
 	}
  
 	return state;
